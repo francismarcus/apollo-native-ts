@@ -12,18 +12,16 @@ const cache = new InMemoryCache()
 const httpLink = new HttpLink({
   uri: 'http://localhost:4000/graphql'
 })
-const authLink = setContext( async (_, { headers }) => {
-  const token = await AsyncStorage.getItem('token')
+const authLink = setContext(async (_, { headers }) => {
+  const token: string = await AsyncStorage.getItem('token')
 
   return {
-  headers: {
-    ...headers,
-    authorization: token ? `${token}` : "",
+    headers: {
+      ...headers,
+      authorization: token ? `${token}` : "",
+    }
   }
-}
 })
-
-
 
 const link = authLink.concat(httpLink)
 const client = new ApolloClient({
@@ -31,10 +29,8 @@ const client = new ApolloClient({
   link
 })
 
-const App: React.StatelessComponent = () => (
+export default () => (
   <ApolloProvider client={client}>
     <AppContainer />
   </ApolloProvider>
 )
-
-export default App
