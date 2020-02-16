@@ -1,10 +1,11 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components/native'
 import Welcome from './screens/Welcome'
+import Login from './screens/Login'
 
 export default () => (
 	<ThemeProvider theme={themes.light}>
-		<Welcome />
+		<Login />
 	</ThemeProvider>
 )
 

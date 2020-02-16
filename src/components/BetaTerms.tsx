@@ -32,7 +32,7 @@ const TermsAndConditions = styled.View`
     flex-wrap: wrap;
     align-items: flex-start;
     flex-direction: row;
-    margin-top: ${({ theme }) => theme.spacing.large};
+    margin-top: ${({ theme }) => theme.spacing.base};
 `
 
 const StyledTermsText = styled.Text`
