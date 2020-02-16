@@ -19,7 +19,6 @@ export const schema = yup.object().shape({
 })
 
 export default () => {
-
     const [login, { error, client, loading }] = useMutation(LoginDocument);
     return (
         <Formik
@@ -49,9 +48,10 @@ export default () => {
 
 
                         <LoginForm error={error} />
+                        <RoundButton />
                     </Scroll>
                 </Wrapper>
-                <RoundButton />
+                
             </KeyboardView>
         </Formik>
     )

@@ -27,5 +27,5 @@ const Button = styled.TouchableHighlight`
 `
 
 const Icon = styled.Text`
-    font-size: ${({ theme }) => theme.fz.t3}
+    font-size: ${({ theme }) => theme.fz.t2}
 `
