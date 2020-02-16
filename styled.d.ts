@@ -8,6 +8,15 @@ declare module 'styled-components' {
 		color: string;
 		type: string;
 		primaryText: string;
+		colors: {
+			bg: string
+			primary: string
+			secondary: string
+			accent: string
+			text: string
+
+			watermelon: string
+		}
 		spacing: {
 			tiny: string;
 			small: string;

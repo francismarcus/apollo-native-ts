@@ -1,26 +1,12 @@
 import React from 'react'
-import First from './components/First'
-import styled, { ThemeProvider } from 'styled-components/native'
+import { ThemeProvider } from 'styled-components/native'
+import Welcome from './screens/Welcome'
 
 export default () => (
 	<ThemeProvider theme={themes.light}>
-		<Container>
-			<StyledText> Hello </StyledText>
-		</Container>
+		<Welcome />
 	</ThemeProvider>
 )
-
-const StyledText = styled.Text`
-	font-size: ${props => props.theme.fz.t1};
-	color: ${props => props.theme.color}
-`
-
-const Container = styled.View`
-	flex: 1;
-	background-color: ${({ theme }) => theme.bgColor};
-	align-items: center;
-	justify-content: center;
-`
 
 const fz = {
 	micro: "8px", // 8
@@ -39,6 +25,16 @@ const spacing = {
 	xlarge: "64px"
 }
 
+const colors = {
+	watermelon: '#FF5A5F',
+	green: '#00A699',
+	darkcyan: '#008388',
+	orange: '#FC642D',
+	charcoal: '#484848',
+	bluecharcoal: '#1F2933',
+	grey: '#767676',
+}
+
 const shared = {
 	spacing,
 	fz
@@ -46,6 +42,14 @@ const shared = {
 
 const themes = {
 	light: {
+		colors: {
+			bg: 'white',
+			primary: colors.watermelon,
+			secondary: colors.green,
+			accent: colors.orange,
+			text: colors.charcoal,
+			...colors
+		},
 		type: 'light',
 		bgColor: 'white',
 		color: '#ff5a5f',
